@@ -30,6 +30,7 @@
         {
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.KeyCodeStatus = new System.Windows.Forms.Label();
+            this.DoubleKeyWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxInput
@@ -49,11 +50,22 @@
             this.KeyCodeStatus.TabIndex = 1;
             this.KeyCodeStatus.Text = "label1";
             // 
+            // DoubleKeyWarning
+            // 
+            this.DoubleKeyWarning.AutoSize = true;
+            this.DoubleKeyWarning.ForeColor = System.Drawing.Color.Red;
+            this.DoubleKeyWarning.Location = new System.Drawing.Point(476, 96);
+            this.DoubleKeyWarning.Name = "DoubleKeyWarning";
+            this.DoubleKeyWarning.Size = new System.Drawing.Size(35, 13);
+            this.DoubleKeyWarning.TabIndex = 2;
+            this.DoubleKeyWarning.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 284);
+            this.Controls.Add(this.DoubleKeyWarning);
             this.Controls.Add(this.KeyCodeStatus);
             this.Controls.Add(this.textBoxInput);
             this.Name = "Form1";
@@ -67,6 +79,7 @@
 
         private System.Windows.Forms.TextBox textBoxInput;
         private System.Windows.Forms.Label KeyCodeStatus;
+        private System.Windows.Forms.Label DoubleKeyWarning;
     }
 }
 

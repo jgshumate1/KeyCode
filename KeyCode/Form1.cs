@@ -11,9 +11,12 @@ namespace KeyCode
 {
     public partial class Form1 : Form
     {
+        private DateTime? _timeValue = null;
+
         public Form1()
         {
             InitializeComponent();
+            DoubleKeyWarning.Text = String.Empty;
         }
 
         protected override void OnKeyPress(KeyPressEventArgs e)
@@ -37,6 +40,23 @@ namespace KeyCode
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
+            if (_timeValue == null)
+            {
+                _timeValue = DateTime.Now;
+            }
+            else
+            {
+                TimeSpan? val =  DateTime.Now - _timeValue;
+                _timeValue = DateTime.Now;
+                if (val.Value.TotalSeconds > 1)
+                {
+                    DoubleKeyWarning.Text = String.Empty;
+                }
+                else
+                {
+                    DoubleKeyWarning.Text = "Double Key hit prev key = " + KeyCodeStatus.Text;
+                }
+            }
             // Determine whether the keystroke is a number from the top of the keyboard. 
             if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
             {
